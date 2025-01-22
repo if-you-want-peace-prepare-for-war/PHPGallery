@@ -3,6 +3,7 @@ body {
     color: #ffffff;
     font-family: Arial, sans-serif;
 }
+
 .container {
     width: 90%;
     margin: auto;
@@ -11,32 +12,41 @@ body {
     position: relative;
     text-align: center;
 }
+
 h1 {
     color: #ffa500;
 }
+
 .breadcrumb a,
 .menu a {
     color: #00ff00;
     text-decoration: none;
 }
+
 .breadcrumb a:hover,
 .menu a:hover {
     text-decoration: underline;
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
 }
+
 .thumb {
     margin: 10px;
     text-align: center;
 }
+
 .thumb img {
     max-width: 200px;
     max-height: 200px;
 }
+
+/* Add these styles to the existing file */
+
 .nav-arrow {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
@@ -44,15 +54,19 @@ h1 {
     padding: 10px;
     text-decoration: none;
     font-size: 24px;
+    z-index: 1000;
 }
+
 .nav-arrow.prev {
     left: 10px;
 }
+
 .nav-arrow.next {
     right: 10px;
 }
+
 .home-link {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -61,7 +75,9 @@ h1 {
     padding: 10px;
     text-decoration: none;
     font-size: 18px;
+    z-index: 1000;
 }
+
 .banner-space {
     height: 100px;
     background-color: #f1f1f1;
@@ -69,6 +85,7 @@ h1 {
     line-height: 100px;
     margin-bottom: 20px;
 }
+
 .image-viewer img {
     max-width: 100%;
     max-height: 600px;

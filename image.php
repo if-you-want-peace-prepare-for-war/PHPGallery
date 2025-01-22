@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Viewer</title>
     <link rel="stylesheet" href="style.css">
-
     <!-- Matomo -->
     <script>
         var _paq = window._paq = window._paq || [];
@@ -21,7 +20,6 @@
         })();
     </script>
     <!-- End Matomo Code -->
-
 </head>
 <body>
 <div class="banner-space">Banner Space</div>
@@ -78,6 +76,32 @@
     ?>
 </div>
 <div class="banner-space">Banner Space</div>
-<script src="script.js"></script>
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            const prevButton = document.querySelector('.nav-arrow.prev');
+            if (prevButton) {
+                window.location.href = prevButton.href;
+            }
+        } else if (event.key === 'ArrowRight') {
+            const nextButton = document.querySelector('.nav-arrow.next');
+            if (nextButton) {
+                window.location.href = nextButton.href;
+            }
+        } else if (event.key === 'ArrowUp') {
+            const homeButton = document.querySelector('.home-link');
+            if (homeButton) {
+                window.location.href = homeButton.href;
+            }
+        } else if (event.key === 'ArrowDown') {
+            window.history.back();
+        } else if (event.key === 'Enter' || event.key === ' ') {
+            const image = document.querySelector('.image-viewer img');
+            if (image) {
+                window.open(image.src, '_blank');
+            }
+        }
+    });
+</script>
 </body>
 </html>
