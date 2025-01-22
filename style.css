@@ -1,0 +1,33 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 90%;
+    margin: auto;
+}
+h1 {
+    color: #ffa500;
+}
+.breadcrumb a,
+.menu a {
+    color: #00ff00;
+    text-decoration: none;
+}
+.breadcrumb a:hover,
+.menu a:hover {
+    text-decoration: underline;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.thumb {
+    margin: 10px;
+    text-align: center;
+}
+.thumb img {
+    max-width: 200px;
+    max-height: 200px;
+}
