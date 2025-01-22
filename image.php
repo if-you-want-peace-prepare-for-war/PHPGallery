@@ -20,11 +20,13 @@
 
     if ($index > 0) {
         $prevIndex = $index - 1;
-        echo "<a href=\"image.php?path=" . rawurlencode($path) . "&index=$prevIndex\" class=\"nav-arrow prev\">&lt; Previous</a>";
+        $prevPath = str_replace($root, '', $files[$prevIndex]);
+        echo "<a href=\"image.php?path=" . rawurlencode($prevPath) . "&index=$prevIndex\" class=\"nav-arrow prev\">&lt; Previous</a>";
     }
     if ($index < count($files) - 1) {
         $nextIndex = $index + 1;
-        echo "<a href=\"image.php?path=" . rawurlencode($path) . "&index=$nextIndex\" class=\"nav-arrow next\">Next &gt;</a>";
+        $nextPath = str_replace($root, '', $files[$nextIndex]);
+        echo "<a href=\"image.php?path=" . rawurlencode($nextPath) . "&index=$nextIndex\" class=\"nav-arrow next\">Next &gt;</a>";
     }
 
     $fileName = basename($files[$index]);
@@ -53,7 +55,7 @@
     $relativeMiddleImagePath = str_replace($root, '', $middleImagePath);
 
     echo "<div class=\"image-viewer\">
-                <img src=\"$relativeMiddleImagePath\" alt=\"$fileName\" onclick=\"window.open('$path', '_blank')\">
+                <img src=\"$relativeMiddleImagePath\" alt=\"$fileName\" onclick=\"window.open('" . htmlspecialchars($path, ENT_QUOTES, 'UTF-8') . "', '_blank')\">
                 <p>$fileName</p>
               </div>";
     ?>
