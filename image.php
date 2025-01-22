@@ -50,7 +50,7 @@
     }
 
     echo "<div class=\"image-viewer\">
-                <img src=\"$middleImagePath\" alt=\"$fileName\" onclick=\"window.open('//img.matrix.lan/$path', '_blank')\">
+                <img src=\"//img.matrix.lan$middleImageDir/$fileName\" alt=\"$fileName\" onclick=\"window.open('//img.matrix.lan/$path', '_blank')\">
                 <p>$fileName</p>
               </div>";
     ?>
