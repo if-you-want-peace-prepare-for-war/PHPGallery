@@ -1,6 +1,6 @@
 body {
     background-color: #121212;
-    color: #ffffff;
+    color: #171313;
     font-family: Arial, sans-serif;
 }
 
@@ -78,7 +78,7 @@ h1 {
 
 .banner-space {
     height: 100px;
-    background-color: #f1f1f1;
+    background-color: #171313;
     text-align: center;
     line-height: 100px;
     margin-bottom: 20px;
@@ -90,4 +90,30 @@ h1 {
     border: 2px solid #000;
     display: block;
     margin: 0 auto;
+}
+
+.container {
+    border: 10px solid #000;
+    padding: 20px;
+    position: relative;
+}
+.thumb {
+    display: inline-block;
+    margin: 10px;
+}
+.thumb img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid #000;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #ff6200;
+    font-weight: bold;
 }
