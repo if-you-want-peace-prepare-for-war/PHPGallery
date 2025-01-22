@@ -74,12 +74,12 @@
 
                 if (!file_exists($thumbnailPath)) {
                     try {
-                        $image = new \Gmagick($file);
+                        $image = new Gmagick($file);
                         $image->thumbnailImage(200, 200, true);
                         $image->setImageFormat('webp');
                         $image->write($thumbnailPath);
                         error_log("Thumbnail created for $fileName at $thumbnailPath");
-                    } catch (\Exception $e) {
+                    } catch (Exception $e) {
                         error_log("Failed to create thumbnail for $fileName: " . $e->getMessage());
                     }
                 }

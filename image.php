@@ -38,13 +38,13 @@
             mkdir($middleImageDir, 0777, true);
         }
         try {
-            $image = new \Gmagick($currentPath);
-            $image->resizeImage(768, 768, \Gmagick::FILTER_LANCZOS, 1, true);
+            $image = new Gmagick($currentPath);
+            $image->resizeImage(768, 768, Gmagick::FILTER_LANCZOS, 1, true);
             $image->setImageFormat('webp');
             $image->setCompressionQuality(80);
             $image->write($middleImagePath);
             error_log("Middle-sized image created for $fileName at $middleImagePath");
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             error_log("Failed to create middle-sized image for $fileName: " . $e->getMessage());
         }
     }
