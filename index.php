@@ -85,7 +85,8 @@
             }
 
             echo "<div class=\"thumb\">
-                        <a href=\"image.php?path=" . rawurlencode($path . '/' . $fileName) . "&index=$index\" target=\"_blank\"><img src=\"/thumbnail/" . pathinfo($fileName, PATHINFO_FILENAME) . ".webp\" alt=\"$fileName\"></a>
+                        <a href=\"image.php?path=" . rawurlencode($path . '/'
+                    . $fileName) . "&index=$index\" target=\"_top\"><img src=\"/thumbnail/" . pathinfo($fileName, PATHINFO_FILENAME) . ".webp\" alt=\"$fileName\"></a>
                         <p>$fileName</p>
                       </div>";
         }
