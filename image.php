@@ -12,7 +12,7 @@
     <?php
     $path = isset($_GET['path']) ? $_GET['path'] : '';
     $index = isset($_GET['index']) ? intval($_GET['index']) : 0;
-    $root = '/var/www/img.matrix.lan';
+    $root = getcwd(); // Using the current working directory as the basepath/webroot
     $currentPath = realpath($root . '/' . $path);
     $files = array_values(array_filter(glob(dirname($currentPath) . '/*'), 'is_file'));
 
@@ -28,7 +28,7 @@
     }
 
     $fileName = basename($files[$index]);
-    $thumbnailDir = '/thumbnail';
+    $thumbnailDir = $root . '/thumbnail';
     $folderName = basename(dirname($path));
     $middleImageDir = $thumbnailDir . '/' . $folderName;
     $middleImagePath = $middleImageDir . '/' . pathinfo($fileName, PATHINFO_FILENAME) . '_scaled.webp';
