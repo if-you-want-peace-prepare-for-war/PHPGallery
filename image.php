@@ -28,10 +28,10 @@
     }
 
     $fileName = basename($files[$index]);
-    $thumbnailDir = $root . '/thumbnail';
+    $thumbnailDir = '/thumbnail';
     $folderName = basename(dirname($path));
     $middleImageDir = $thumbnailDir . '/' . $folderName;
-    $middleImagePath = $middleImageDir . '/' . pathinfo($fileName, PATHINFO_FILENAME) . '_scaled.webp';
+    $middleImagePath = "//img.matrix.lan" . $middleImageDir . '/' . pathinfo($fileName, PATHINFO_FILENAME) . '_scaled.webp';
 
     if (!file_exists($middleImagePath)) {
         if (!is_dir($middleImageDir)) {
@@ -50,7 +50,7 @@
     }
 
     echo "<div class=\"image-viewer\">
-                <img src=\"$middleImagePath\" alt=\"$fileName\" onclick=\"window.open('$path', '_blank')\">
+                <img src=\"$middleImagePath\" alt=\"$fileName\" onclick=\"window.open('//img.matrix.lan/$path', '_blank')\">
                 <p>$fileName</p>
               </div>";
     ?>
